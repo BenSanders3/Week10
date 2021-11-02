@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Sandwiches</title>
+</head>
+<body>
+<form>
+ <table>
+  <tr th:each="currentSandwich : ${sandwiches}">
+   <td th:text="${currentSandwich.id}"/>
+   <td th:text="${currentSandwich.bread}"/>
+   <td th:text="${currentSandwich.meat}"/>
+   <td th:text="${currentSandwich.cheese}"/>
+   <td th:text="${currentSandwich.server.fname}"/>
+   <td th:text="${currentSandwich.server.lname}"/>
+   <td><a th:href="@{/edit/{id}(id=${currentSandwich.id})}">Edit</a></td>
+   <td><a th:href="@{/delete/{id}(id=${currentSandwich.id})}">Delete</a></td>
+  </tr>
+ </table>
+</form>
+<a href="../addSandwich">Add A New Sandwich</a>
+</body>
+</html>

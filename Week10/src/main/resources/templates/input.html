@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add New Sandwich</title>
+</head>
+<body>
+ <form th:object="${newSandwich}" th:action="@{/update/{id}(id=${newSandwich.id})}" method='POST'>
+  Bread: <input name="bread" size="20" th:field="*{bread}"> <br />
+  Meat: <input name="meat" size="20" th:field="*{meat}"> <br />
+  Cheese: <input name="cheese" size="20" th:field="*{cheese}"> <br />
+  Server First Name: <input name="server.fname" size="20" th:field="*{server.fname}"> <br />
+  Server Last Name: <input name="server.lname" size="20" th:field="*{server.lname}"> <br />
+  <input name="submit" type="submit" value="submit" />
+ </form>
+<a href="viewAll">View All Sandwiches</a>
+</body>
+</html>
